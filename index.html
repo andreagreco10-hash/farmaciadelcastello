@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmacia del Castello - Corigliano d'Otranto</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome per le Icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Colori personalizzati basati sul logo reale */
+        .text-brand-green-light { color: #8DC63F; }
+        .text-brand-green-dark { color: #005F30; }
+        .bg-brand-green-dark { bg-color: #005F30; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Pulsante WhatsApp Fluttuante -->
+    <a href="https://wa.me/393500871133" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#20ba5a] hover:scale-110 transition-all flex items-center justify-center group" aria-label="Contattaci su WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 ease-out font-bold text-sm whitespace-nowrap">
+            Scrivici su WhatsApp
+        </span>
+    </a>
+
+    <!-- Header / Navigazione -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+            <!-- Logo Reale Vettoriale (SVG) -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-12 h-12 shrink-0 flex items-center justify-center">
+                    <!-- Riproduzione SVG fedele del logo originale inviato -->
+                    <svg viewBox="0 0 100 100" class="w-11 h-11">
+                        <!-- Petali superiori e inferiori (Verde Chiaro e Scuro sfalsati) -->
+                        <path d="M 50,10 C 42,20 42,35 50,45 C 58,35 58,20 50,10 Z" fill="#8DC63F" opacity="0.9" />
+                        <path d="M 50,90 C 42,80 42,65 50,55 C 58,65 58,80 50,90 Z" fill="#005F30" opacity="0.9" />
+                        <!-- Petali laterali -->
+                        <path d="M 10,50 C 20,42 35,42 45,50 C 35,58 20,58 10,50 Z" fill="#005F30" opacity="0.9" />
+                        <path d="M 90,50 C 80,42 65,42 55,50 C 65,58 80,58 90,50 Z" fill="#8DC63F" opacity="0.9" />
+                        <!-- Petali diagonali (intersezioni curve decorative) -->
+                        <path d="M 22,22 C 32,25 40,35 38,45 C 28,43 20,32 22,22 Z" fill="#8DC63F" opacity="0.8" />
+                        <path d="M 78,22 C 68,25 60,35 62,45 C 72,43 80,32 78,22 Z" fill="#8DC63F" opacity="0.8" />
+                        <path d="M 22,78 C 32,75 40,65 38,55 C 28,57 20,68 22,78 Z" fill="#005F30" opacity="0.8" />
+                        <path d="M 78,78 C 68,75 60,65 62,55 C 72,57 80,68 78,78 Z" fill="#8DC63F" opacity="0.8" />
+                        <!-- Fiore Bianco centrale -->
+                        <circle cx="50" cy="50" r="16" fill="#ffffff" />
+                        <!-- Elemento centrale geometrico (Stemma interno a 4 nodi) -->
+                        <path d="M 44,44 L 56,44 C 58,44 58,42 56,42 C 54,42 54,38 56,38 C 58,38 58,44 56,46 L 56,54 C 56,56 58,56 58,54 C 58,52 62,52 62,54 C 62,56 56,56 54,54 L 46,54 C 44,54 44,56 46,56 C 48,56 48,60 46,60 C 44,60 44,54 46,52 L 46,46 C 46,44 44,44 44,46 C 44,48 40,48 40,46 C 40,44 46,44 44,44 Z" fill="none" stroke="#005F30" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="43" cy="43" r="2.5" fill="#005F30" />
+                        <circle cx="57" cy="43" r="2.5" fill="#005F30" />
+                        <circle cx="43" cy="57" r="2.5" fill="#005F30" />
+                        <circle cx="57" cy="57" r="2.5" fill="#005F30" />
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-tight block text-slate-900 leading-tight">Farmacia del Castello</span>
+                    <span class="text-xs text-emerald-700 font-bold tracking-wider uppercase">Corigliano d'Otranto</span>
+                </div>
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
+                <a href="#il-castello" class="hover:text-emerald-750 transition-colors">La Sede</a>
+                <a href="#servizi" class="hover:text-emerald-750 transition-colors">Servizi</a>
+                <a href="#staff" class="hover:text-emerald-750 transition-colors">Chi Siamo</a>
+                <a href="#orari" class="hover:text-emerald-750 transition-colors">Orari</a>
+                <a href="#contatti" class="hover:text-emerald-750 transition-colors">Contatti</a>
+            </nav>
+
+            <!-- Bottone d'azione rapida (Telefono fisso) -->
+            <a href="tel:+390836508740" class="bg-[#005F30] hover:bg-emerald-800 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition-all shadow-lg shadow-emerald-900/10 flex items-center gap-2">
+                <i class="fa-solid fa-phone"></i>
+                <span class="hidden sm:inline">0836 508740</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Sezione Hero -->
+    <section class="relative bg-gradient-to-br from-emerald-50/60 via-white to-sky-50/30 py-16 md:py-24 border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-7 space-y-6 text-center md:text-left">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-850">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#8DC63F] animate-pulse"></span>
+                    Al servizio della tua salute
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    La cura e il benessere nel quale crediamo a <span class="text-[#005F30]">Corigliano</span>
+                </h1>
+                <p class="text-slate-650 text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
+                    Benvenuti nella Farmacia del Castello, diretta con passione e professionalità dalla <strong class="text-slate-900 font-semibold">Dott.ssa Rosa Pagliarulo</strong>. Un punto di riferimento sicuro per tutta la cittadinanza.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="https://wa.me/393500871133" target="_blank" rel="noopener" class="bg-[#25D366] hover:bg-[#20ba5a] text-white px-8 py-3.5 rounded-xl font-bold shadow-lg transition-all text-center flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Scrivici su WhatsApp
+                    </a>
+                    <a href="#servizi" class="bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 px-8 py-3.5 rounded-xl font-semibold shadow-sm transition-all text-center">
+                        I Nostri Servizi
+                    </a>
+                </div>
+            </div>
+
+            <!-- Box Informativo Rapido -->
+            <div class="md:col-span-5 bg-white p-8 rounded-2xl shadow-xl shadow-slate-100 border border-slate-100 space-y-5">
+                <h3 class="font-bold text-xl text-slate-900 border-b border-slate-100 pb-4 flex items-center justify-between">
+                    <span><i class="fa-regular fa-clock text-[#005F30] mr-2"></i>Contatti Rapidi</span>
+                </h3>
+                <div class="space-y-3.5">
+                    <div class="space-y-0.5">
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Indirizzo Sede</p>
+                        <p class="text-sm text-slate-700 font-medium">
+                            <i class="fa-solid fa-location-dot text-[#005F30] mr-1.5"></i> 
+                            Piazza Vittoria, 6 - Corigliano d'Otranto (LE)
+                        </p>
+                    </div>
+                    <div class="space-y-0.5 pt-1">
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Telefono Fisso</p>
+                        <a href="tel:+390836508740" class="text-xl font-extrabold text-[#005F30] hover:text-emerald-800 transition-colors block">
+                            <i class="fa-solid fa-phone-volume mr-1.5"></i> 0836 508740
+                        </a>
+                    </div>
+                    <div class="space-y-0.5 pt-1">
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">WhatsApp (Invia Ricette)</p>
+                        <a href="https://wa.me/393500871133" target="_blank" rel="noopener" class="text-xl font-extrabold text-[#25D366] hover:text-[#20ba5a] transition-colors block">
+                            <i class="fa-brands fa-whatsapp mr-1.5"></i> 350 087 1133
+                        </a>
+                    </div>
+                    <div class="space-y-0.5 pt-1">
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Invia un'Email</p>
+                        <a href="mailto:farmaciadelcastellosnc@gmail.com" class="text-sm font-semibold text-slate-700 hover:text-[#005F30] transition-colors block break-all">
+                            <i class="fa-regular fa-envelope mr-1.5"></i> farmaciadelcastellosnc@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione: Sede storica & Castello -->
+    <section id="il-castello" class="py-16 bg-white border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="bg-gradient-to-r from-slate-900 to-[#003B1E] text-white rounded-3xl p-8 md:p-12 shadow-xl flex flex-col md:flex-row gap-8 items-center justify-between relative overflow-hidden">
+                <!-- Sfondo ornamentale con icona castello -->
+                <div class="absolute right-0 top-0 opacity-10 text-9xl pointer-events-none translate-x-12 -translate-y-12">
+                    <i class="fa-solid fa-fort-awesome"></i>
+                </div>
+                <div class="space-y-4 max-w-2xl relative z-10">
+                    <span class="text-[#8DC63F] text-xs font-bold uppercase tracking-widest">Identità e Tradizione</span>
+                    <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Accanto al maestoso Castello De' Monti</h2>
+                    <p class="text-slate-300 leading-relaxed text-sm md:text-base">
+                        Ci troviamo in Piazza Vittoria, a pochi passi dal celebre monumento simbolo di Corigliano d'Otranto. Una vicinanza storica che ispira il nostro logo e il nostro quotidiano impegno di solidità, accoglienza e protezione per la salute dei cittadini salentini.
+                    </p>
+                </div>
+                <div class="shrink-0 relative z-10 w-full md:w-auto">
+                    <a href="https://maps.google.com/?q=Piazza+Vittoria+6+Corigliano+d'Otranto" target="_blank" rel="noopener" class="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-[#8DC63F] hover:bg-[#7db235] text-slate-950 px-6 py-3 rounded-xl font-bold transition-all shadow-lg">
+                        <i class="fa-solid fa-map-location-dot"></i> Ottieni Indicazioni
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Servizi -->
+    <section id="servizi" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-3xl font-bold tracking-tight text-slate-900">I Nostri Servizi Sanitari</h2>
+                <p class="text-slate-500">Dalla prevenzione cardiaca alla cura dei più piccoli, offriamo soluzioni concrete per la tua salute.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Elettrocardiogramma ECG -->
+                <div class="p-6 rounded-2xl border border-slate-200/60 bg-white hover:shadow-xl hover:shadow-emerald-950/5 hover:border-[#005F30]/30 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#005F30] flex items-center justify-center mb-5 group-hover:bg-[#005F30] group-hover:text-white transition-all">
+                        <i class="fa-solid fa-wave-square text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Elettrocardiogramma (ECG)</h3>
+                    <p class="text-slate-650 text-sm leading-relaxed">
+                        Servizio di telemedicina per l'esecuzione rapida e refertata dell'ECG direttamente in sede, valido per lo sport e controlli generici.
+                    </p>
+                </div>
+
+                <!-- Foratura Lobi -->
+                <div class="p-6 rounded-2xl border border-slate-200/60 bg-white hover:shadow-xl hover:shadow-emerald-950/5 hover:border-[#005F30]/30 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#005F30] flex items-center justify-center mb-5 group-hover:bg-[#005F30] group-hover:text-white transition-all">
+                        <i class="fa-solid fa-circle-dot text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Foratura Lobi</h3>
+                    <p class="text-slate-650 text-sm leading-relaxed">
+                        Eseguita in condizioni di massima igiene e sicurezza con sistemi indolore e orecchini sterili e biocompatibili.
+                    </p>
+                </div>
+
+                <!-- Autoanalisi e Pressione -->
+                <div class="p-6 rounded-2xl border border-slate-200/60 bg-white hover:shadow-xl hover:shadow-emerald-950/5 hover:border-[#005F30]/30 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#005F30] flex items-center justify-center mb-5 group-hover:bg-[#005F30] group-hover:text-white transition-all">
+                        <i class="fa-solid fa-heart-pulse text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Pressione & Glicemia</h3>
+                    <p class="text-slate-650 text-sm leading-relaxed">
+                        Controllo istantaneo dei parametri vitali, della pressione arteriosa e test rapidi per il controllo del profilo lipidico.
+                    </p>
+                </div>
+
+                <!-- Preparazioni Galeniche -->
+                <div class="p-6 rounded-2xl border border-slate-200/60 bg-white hover:shadow-xl hover:shadow-emerald-950/5 hover:border-[#005F30]/30 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#005F30] flex items-center justify-center mb-5 group-hover:bg-[#005F30] group-hover:text-white transition-all">
+                        <i class="fa-solid fa-prescription-bottle-medical text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Preparazioni Galeniche</h3>
+                    <p class="text-slate-650 text-sm leading-relaxed">
+                        Formulazioni su misura preparate con cura e rigore scientifico nel nostro attrezzato laboratorio interno.
+                    </p>
+                </div>
+
+                <!-- Prenotazione CUP -->
+                <div class="p-6 rounded-2xl border border-slate-200/60 bg-white hover:shadow-xl hover:shadow-emerald-950/5 hover:border-[#005F30]/30 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#005F30] flex items-center justify-center mb-5 group-hover:bg-[#005F30] group-hover:text-white transition-all">
+                        <i class="fa-solid fa-calendar-check text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Prenotazioni CUP</h3>
+                    <p class="text-slate-650 text-sm leading-relaxed">
+                        Servizio rapido di prenotazione per esami diagnostici e visite specialistiche del Servizio Sanitario Nazionale.
+                    </p>
+                </div>
+
+                <!-- Prima Infanzia -->
+                <div class="p-6 rounded-2xl border border-slate-200/60 bg-white hover:shadow-xl hover:shadow-emerald-950/5 hover:border-[#005F30]/30 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#005F30] flex items-center justify-center mb-5 group-hover:bg-[#005F30] group-hover:text-white transition-all">
+                        <i class="fa-solid fa-baby text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Infanzia e Cosmesi</h3>
+                    <p class="text-slate-650 text-sm leading-relaxed">
+                        Ampio assortimento di alimenti speciali, prodotti per neonati e mamme e marchi dermocosmetici d'avanguardia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione: Staff -->
+    <section id="staff" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-3xl font-bold tracking-tight text-slate-900">Chi Siamo</h2>
+                <p class="text-slate-500">Un team unito e professionale al servizio della tua salute e del tuo benessere quotidiano.</p>
+            </div>
+
+            <!-- Griglia dello Staff -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Rosa Pagliarulo -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center space-y-4 shadow-sm">
+                    <div class="w-16 h-16 bg-[#005F30] text-white font-extrabold text-2xl flex items-center justify-center rounded-full mx-auto">RP</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Dott.ssa Rosa Pagliarulo</h4>
+                        <p class="text-xs text-[#005F30] font-semibold tracking-wider uppercase mt-1">Farmacista Titolare</p>
+                    </div>
+                </div>
+
+                <!-- Francesco Gabrieli -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center space-y-4 shadow-sm">
+                    <div class="w-16 h-16 bg-slate-200 text-slate-700 font-bold text-xl flex items-center justify-center rounded-full mx-auto">FG</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Francesco Gabrieli</h4>
+                        <p class="text-xs text-slate-500 font-semibold tracking-wider uppercase mt-1">Farmacista</p>
+                    </div>
+                </div>
+
+                <!-- Rossella Epifani -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center space-y-4 shadow-sm">
+                    <div class="w-16 h-16 bg-slate-200 text-slate-700 font-bold text-xl flex items-center justify-center rounded-full mx-auto">RE</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Rossella Epifani</h4>
+                        <p class="text-xs text-slate-500 font-semibold tracking-wider uppercase mt-1">Farmacista</p>
+                    </div>
+                </div>
+
+                <!-- Alessandra Ricchello -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center space-y-4 shadow-sm">
+                    <div class="w-16 h-16 bg-slate-200 text-slate-700 font-bold text-xl flex items-center justify-center rounded-full mx-auto">AR</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Alessandra Ricchello</h4>
+                        <p class="text-xs text-slate-500 font-semibold tracking-wider uppercase mt-1">Farmacista</p>
+                    </div>
+                </div>
+
+                <!-- Tiziana Dimitri -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center space-y-4 shadow-sm">
+                    <div class="w-16 h-16 bg-emerald-100 text-emerald-800 font-bold text-xl flex items-center justify-center rounded-full mx-auto">TD</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">Tiziana Dimitri</h4>
+                        <p class="text-xs text-[#005F30] font-bold tracking-wider uppercase mt-1">Collaboratrice</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Orari -->
+    <section id="orari" class="py-20 bg-slate-50 border-y border-slate-200/60">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <h2 class="text-3xl font-bold tracking-tight text-slate-900">Orari di Apertura</h2>
+                <p class="text-slate-500">Siamo a tua disposizione durante tutta la settimana con i seguenti orari.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl shadow-slate-100 border border-slate-200 overflow-hidden">
+                <div class="divide-y divide-slate-100">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-6 hover:bg-slate-50/50 transition-colors gap-2">
+                        <span class="font-bold text-slate-800 flex items-center gap-2">
+                            <i class="fa-solid fa-calendar-day text-[#005F30]"></i> Lunedì - Venerdì
+                        </span>
+                        <span class="text-slate-900 font-semibold bg-emerald-50 text-emerald-900 px-4.5 py-1.5 rounded-xl text-sm self-start sm:self-auto">
+                            08:30 - 13:00 &nbsp;|&nbsp; 17:00 - 20:30
+                        </span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-6 hover:bg-slate-50/50 transition-colors gap-2">
+                        <span class="font-bold text-slate-800 flex items-center gap-2">
+                            <i class="fa-solid fa-calendar-day text-[#005F30]"></i> Sabato Mattina
+                        </span>
+                        <span class="text-slate-900 font-semibold bg-emerald-50 text-emerald-900 px-4.5 py-1.5 rounded-xl text-sm self-start sm:self-auto">
+                            08:30 - 13:00
+                        </span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-6 hover:bg-slate-50/50 transition-colors gap-2">
+                        <span class="font-bold text-slate-800 flex items-center gap-2">
+                            <i class="fa-solid fa-calendar-day text-slate-400"></i> Sabato Pomeriggio
+                        </span>
+                        <span class="text-amber-800 font-semibold bg-amber-50 border border-amber-100 px-4.5 py-1.5 rounded-xl text-sm self-start sm:self-auto">
+                            Chiuso (salvo turno attivo)
+                        </span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-6 bg-red-50/10 hover:bg-red-50/20 transition-colors gap-2">
+                        <span class="font-bold text-slate-800 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-xmark text-red-500"></i> Domenica
+                        </span>
+                        <span class="text-red-800 font-semibold bg-red-50 border border-red-100 px-4.5 py-1.5 rounded-xl text-sm self-start sm:self-auto">
+                            Chiuso (salvo turno attivo)
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="bg-emerald-50/70 p-6 text-center border-t border-emerald-100">
+                    <p class="text-xs text-emerald-950 font-bold uppercase tracking-wider mb-2">Hai bisogno di controllare le farmacie di turno oggi?</p>
+                    <a href="https://www.google.com/search?q=farmacie+di+turno+corigliano+d%27otranto" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-[#005F30] hover:text-emerald-950 font-extrabold text-sm transition-colors">
+                        Controlla i turni attivi nel territorio <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Contatti & Mappa -->
+    <section id="contatti" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-stretch">
+            
+            <!-- Dettagli di contatto -->
+            <div class="space-y-6 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-900">Sede & Contatti</h2>
+                    <p class="text-slate-500">Ti aspettiamo nella piazza principale del borgo. Puoi chiamarci o inviare un'email per qualsiasi richiesta d'informazioni o disponibilità dei farmaci.</p>
+                </div>
+
+                <div class="space-y-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-[#005F30] flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-location-dot text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-950">La nostra posizione</h4>
+                            <p class="text-slate-650 text-sm font-medium">Piazza Vittoria, 6, 73022 Corigliano d'Otranto (LE)</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-[#005F30] flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-phone text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-950">Telefono Fisso</h4>
+                            <p class="text-slate-650 text-sm">
+                                <a href="tel:+390836508740" class="hover:text-[#005F30] font-bold text-base transition-colors">0836 508740</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100/60 text-[#25D366] flex items-center justify-center shrink-0">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-950 text-[#005F30]">WhatsApp (Ordini e Ricette)</h4>
+                            <p class="text-slate-650 text-sm">
+                                <a href="https://wa.me/393500871133" target="_blank" rel="noopener" class="hover:text-[#20ba5a] font-bold text-base transition-colors">350 087 1133</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-[#005F30] flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-envelope text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-950">E-mail</h4>
+                            <p class="text-slate-650 text-sm">
+                                <a href="mailto:farmaciadelcastellosnc@gmail.com" class="hover:text-[#005F30] font-semibold transition-colors">farmaciadelcastellosnc@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-slate-100 flex gap-4">
+                    <a href="https://wa.me/393500871133" target="_blank" rel="noopener" class="flex-1 bg-[#25D366] hover:bg-[#20ba5a] text-white text-center py-4 rounded-xl font-bold transition-all shadow-lg flex items-center justify-center gap-1.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Scrivi
+                    </a>
+                    <a href="https://maps.google.com/?q=Piazza+Vittoria+6+Corigliano+d'Otranto" target="_blank" rel="noopener" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-800 text-center py-4 rounded-xl font-bold transition-all">
+                        <i class="fa-solid fa-location-arrow mr-1.5"></i> Naviga
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mappa di Google interattiva reale -->
+            <div class="relative min-h-[380px] rounded-3xl overflow-hidden border border-slate-200 shadow-xl">
+                <iframe 
+                    class="absolute inset-0 w-full h-full border-0"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.5516084882116!2d18.25418187656641!3d40.16010077148154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134423455a04ddfb%3A0xe76426ffc70ca6b!2sPiazza%20Vittoria%2C%206%2C%2073022%20Corigliano%20d&#39;Otranto%20LE!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-auto bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="space-y-2">
+                <p class="font-bold text-white text-lg">Farmacia del Castello s.n.c.</p>
+                <p class="text-xs max-w-sm">Piazza Vittoria, 6 - 73022 Corigliano d'Otranto (LE) | Partita IVA: 04864130754</p>
+            </div>
+            <p class="text-xs">&copy; 2026 Farmacia del Castello. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
