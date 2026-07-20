@@ -1,1 +1,588 @@
 
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmacia del Castello - Corigliano d'Otranto | Farmacia & Servizi Sanitari</title>
+  <meta name="description" content="Farmacia del Castello a Corigliano d'Otranto (LE). Servizi: ECG, foratura lobi, preparazioni galeniche, prenotazioni CUP. Dott.ssa Rosa Pagliarulo. Piazza Vittoria, 6.">
+  <meta name="keywords" content="farmacia corigliano d'otranto, farmacia del castello, farmacia salento, elettrocardiogramma corigliano, preparazioni galeniche, farmacia turno lecce">
+  <meta name="author" content="Farmacia del Castello s.n.c.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Farmacia del Castello - Corigliano d'Otranto">
+  <meta property="og:description" content="La tua farmacia di fiducia nel cuore del Salento. Servizi sanitari professionali .">
+  <meta property="og:type" content="business.business">
+  <meta property="og:url" content="https://farmaciadelcastello.it">
+  <meta property="og:image" content="https://farmaciadelcastello.it/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Farmacia del Castello - Corigliano d'Otranto">
+  <meta name="twitter:description" content="La tua farmacia di fiducia nel cuore del Salento.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 10c-8 10-8 25 0 35 8-10 8-25 0-35z' fill='%238DC63F'/%3E%3Cpath d='M50 90c-8-10-8-25 0-35 8 10 8 25 0 35z' fill='%23005F30'/%3E%3Cpath d='M10 50c10-8 25-8 35 0-10 8-25 8-35 0z' fill='%23005F30'/%3E%3Cpath d='M90 50c-10-8-25-8-35 0 10 8 25 8 35 0z' fill='%238DC63F'/%3E%3Ccircle cx='50' cy='50' r='16' fill='white'/%3E%3C/svg%3E">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: { brand: { DEFAULT: '#005F30', light: '#8DC63F', dark: '#004a26' } }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .glass { background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,95,48,0.08); }
+    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .mobile-menu.open { max-height: 400px; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #005F30; transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
+    .pulse-dot { animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+    .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+    .service-icon { transition: all 0.3s ease; }
+    .service-card:hover .service-icon { background-color: #005F30; color: white; transform: scale(1.05); }
+    .floating-whatsapp { position: fixed; bottom: 24px; right: 24px; z-index: 50; background: #25D366; color: white; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: all 0.3s ease; }
+    .floating-whatsapp:hover { transform: scale(1.1); }
+    .floating-whatsapp span { max-width: 0; overflow: hidden; white-space: nowrap; transition: max-width 0.4s ease, margin-left 0.4s ease; }
+    .floating-whatsapp:hover span { max-width: 200px; margin-left: 8px; }
+    input:focus, textarea:focus { outline: none; border-color: #005F30; box-shadow: 0 0 0 3px rgba(0,95,48,0.1); }
+    .btn-primary { background: #005F30; color: white; transition: all 0.3s ease; }
+    .btn-primary:hover { background: #004a26; transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,95,48,0.25); }
+    .btn-whatsapp { background: #25D366; color: white; transition: all 0.3s ease; }
+    .btn-whatsapp:hover { background: #20ba5a; transform: translateY(-1px); box-shadow: 0 8px 20px rgba(37,211,102,0.25); }
+    .star { color: #fbbf24; }
+    .hero-gradient { background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #eff6ff 100%); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Pharmacy",
+ "name": "Farmacia del Castello",
+ "image": "https://farmaciadelcastello.it/logo.png",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "Piazza Vittoria, 6",
+  "addressLocality": "Corigliano d'Otranto",
+  "addressRegion": "LE",
+  "postalCode": "73022",
+  "addressCountry": "IT"
+ },
+ "telephone": "+390836508740",
+ "email": "farmaciadelcastellosnc@gmail.com",
+ "openingHours": ["Mo-Fr 08:30-13:00,17:00-20:30", "Sa 08:30-13:00"],
+ "url": "https://farmaciadelcastello.it",
+ "geo": { "@type": "GeoCoordinates", "latitude": 40.1601, "longitude": 18.2564 },
+ "priceRange": "$$",
+ "paymentAccepted": "Cash, Credit Card, Debit Card",
+ "currenciesAccepted": "EUR",
+ "founder": { "@type": "Person", "name": "Dott.ssa Rosa Pagliarulo" }
+}
+</script>
+
+<a href="https://wa.me/393500871133" target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Contattaci su WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="font-bold text-sm">Scrivici su WhatsApp</span>
+</a>
+
+<header class="sticky top-0 z-50 glass border-b border-slate-200/60">
+  <div class="max-w-6xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3">
+      <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 flex items-center justify-center">
+        <svg viewBox="0 0 100 100" class="w-10 h-10 md:w-11 md:h-11">
+          <path d="M50 10c-8 10-8 25 0 35 8-10 8-25 0-35z" fill="#8DC63F" opacity="0.9"/>
+          <path d="M50 90c-8-10-8-25 0-35 8 10 8 25 0 35z" fill="#005F30" opacity="0.9"/>
+          <path d="M10 50c10-8 25-8 35 0-10 8-25 8-35 0z" fill="#005F30" opacity="0.9"/>
+          <path d="M90 50c-10-8-25-8-35 0 10 8 25 8 35 0z" fill="#8DC63F" opacity="0.9"/>
+          <path d="M22 22c10 3 18 13 16 23-10-2-18-13-16-23z" fill="#8DC63F" opacity="0.8"/>
+          <path d="M78 22c-10 3-18 13-16 23 10-2 18-13 16-23z" fill="#8DC63F" opacity="0.8"/>
+          <path d="M22 78c10-3 18-13 16-23-10 2-18 13-16 23z" fill="#005F30" opacity="0.8"/>
+          <path d="M78 78c-10-3-18-13-16-23 10 2 18 13 16 23z" fill="#8DC63F" opacity="0.8"/>
+          <circle cx="50" cy="50" r="16" fill="#fff"/>
+          <path d="M44 44h12c2 0 2-2 0-2-2 0-2-4 0-4 2 0 2 6 0 8v8c0 2 2 2 2 0 0-2 4-2 4 0 0 2-6 2-8 0h-8c-2 0-2 2 0 2 2 0 2 4 0 4-2 0-2-6 0-8v-6c0-2-2-2-2 0 0 2-4 2-4 0 0-2 6-2 4-4z" fill="none" stroke="#005F30" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="43" cy="43" r="2.5" fill="#005F30"/>
+          <circle cx="57" cy="43" r="2.5" fill="#005F30"/>
+          <circle cx="43" cy="57" r="2.5" fill="#005F30"/>
+          <circle cx="57" cy="57" r="2.5" fill="#005F30"/>
+        </svg>
+      </div>
+      <div>
+        <span class="font-bold text-base md:text-lg tracking-tight block text-slate-900 leading-tight">Farmacia del Castello</span>
+        <span class="text-[10px] md:text-xs text-emerald-700 font-bold tracking-wider uppercase">Corigliano d'Otranto</span>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
+      <a href="#sede" class="nav-link hover:text-brand transition-colors">La Sede</a>
+      <a href="#servizi" class="nav-link hover:text-brand transition-colors">Servizi</a>
+      <a href="#staff" class="nav-link hover:text-brand transition-colors">Chi Siamo</a>
+      <a href="#orari" class="nav-link hover:text-brand transition-colors">Orari</a>
+      <a href="#contatti" class="nav-link hover:text-brand transition-colors">Contatti</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="tel:+390836508740" class="hidden sm:flex btn-primary px-4 py-2 rounded-xl text-sm font-bold items-center gap-2">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        0836 508740
+      </a>
+      <button id="menuBtn" class="md:hidden w-10 h-10 flex items-center justify-center text-slate-700" aria-label="Menu">
+        <svg id="menuIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        <svg id="closeIcon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="mobile-menu md:hidden bg-white border-t border-slate-100">
+    <div class="px-4 py-4 space-y-1">
+      <a href="#sede" class="block px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-emerald-50 hover:text-brand transition-colors">La Sede</a>
+      <a href="#servizi" class="block px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-emerald-50 hover:text-brand transition-colors">Servizi</a>
+      <a href="#staff" class="block px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-emerald-50 hover:text-brand transition-colors">Chi Siamo</a>
+      <a href="#orari" class="block px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-emerald-50 hover:text-brand transition-colors">Orari</a>
+      <a href="#contatti" class="block px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-emerald-50 hover:text-brand transition-colors">Contatti</a>
+      <a href="tel:+390836508740" class="block px-4 py-3 rounded-xl font-bold text-brand bg-emerald-50 flex items-center gap-2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Chiama ora: 0836 508740
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="hero-gradient py-16 md:py-24 border-b border-slate-100">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-12 gap-10 md:gap-12 items-center">
+    <div class="md:col-span-7 space-y-6 text-center md:text-left">
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
+        <span class="w-2 h-2 rounded-full bg-brand-light pulse-dot"></span>
+        Al servizio della tua salute
+      </span>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+        La cura che <span class="text-brand">meriti</span>,<br>nel cuore del <span class="text-brand-light">Salento</span>
+      </h1>
+      <p class="text-slate-500 text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
+        Benvenuti nella <strong class="text-slate-800">Farmacia del Castello</strong>, diretta con passione dalla <strong class="text-slate-800">Dott.ssa Rosa Pagliarulo</strong>. Un punto di riferimento sicuro per tutta la cittadinanza di Corigliano d'Otranto.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+        <a href="https://wa.me/393500871133" target="_blank" rel="noopener" class="btn-whatsapp px-8 py-3.5 rounded-xl font-bold shadow-lg flex items-center justify-center gap-2">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Scrivici su WhatsApp
+        </a>
+        <a href="#servizi" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-3.5 rounded-xl font-semibold shadow-sm transition-all text-center flex items-center justify-center gap-2">
+          I Nostri Servizi
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="md:col-span-5 bg-white p-6 md:p-8 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 space-y-5">
+      <h3 class="font-bold text-lg text-slate-900 border-b border-slate-100 pb-4 flex items-center gap-2">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#005F30" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Contatti Rapidi
+      </h3>
+      <div class="space-y-4">
+        <div>
+          <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Indirizzo</p>
+          <p class="text-sm text-slate-700 font-medium flex items-center gap-2 mt-1">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#005F30"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Piazza Vittoria, 6 - Corigliano d'Otranto (LE)
+          </p>
+        </div>
+        <div>
+          <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Telefono</p>
+          <a href="tel:+390836508740" class="text-xl font-extrabold text-brand hover:text-brand-dark transition-colors flex items-center gap-2 mt-1">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#005F30"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            0836 508740
+          </a>
+        </div>
+        <div>
+          <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">WhatsApp Ricette</p>
+          <a href="https://wa.me/393500871133" target="_blank" rel="noopener" class="text-xl font-extrabold text-[#25D366] hover:text-[#20ba5a] transition-colors flex items-center gap-2 mt-1">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            350 087 1133
+          </a>
+        </div>
+        <div>
+          <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Email</p>
+          <a href="mailto:farmaciadelcastellosnc@gmail.com" class="text-sm font-semibold text-slate-700 hover:text-brand transition-colors flex items-center gap-2 mt-1 break-all">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            farmaciadelcastellosnc@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sede" class="py-16 md:py-20 bg-white border-b border-slate-100 scroll-reveal">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="bg-gradient-to-br from-slate-900 via-[#003B1E] to-[#002d17] text-white rounded-3xl p-8 md:p-12 shadow-2xl flex flex-col md:flex-row gap-8 items-center justify-between relative overflow-hidden">
+      <div class="absolute right-0 top-0 opacity-[0.06] text-[180px] pointer-events-none translate-x-8 -translate-y-8 select-none">
+        <svg width="180" height="180" viewBox="0 0 24 24" fill="currentColor"><path d="M2 22h20V2L2 22zm18-2h-3V9.83l3-3V20zM15 20H9v-5.17l3-3 3 3V20zm-4-7.17l-3 3V20H5V9.83l3-3 3 3v3z"/></svg>
+      </div>
+      <div class="space-y-4 max-w-2xl relative z-10">
+        <span class="text-brand-light text-xs font-bold uppercase tracking-[0.2em]">Identita e Tradizione</span>
+        <h2 class="text-2xl md:text-4xl font-bold tracking-tight">Accanto al maestoso Castello De' Monti</h2>
+        <p class="text-slate-300 leading-relaxed text-sm md:text-base">
+          Ci troviamo in Piazza Vittoria, a pochi passi dal celebre monumento simbolo di Corigliano d'Otranto. Una vicinanza storica che ispira il nostro logo e il nostro quotidiano impegno di solidita, accoglienza e protezione per la salute dei cittadini salentini.
+        </p>
+      </div>
+      <div class="shrink-0 relative z-10 w-full md:w-auto">
+        <a href="https://maps.google.com/?q=Piazza+Vittoria+6+Corigliano+d'Otranto" target="_blank" rel="noopener" class="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-brand-light hover:bg-[#7db235] text-slate-950 px-6 py-3.5 rounded-xl font-bold transition-all shadow-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Ottieni Indicazioni
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servizi" class="py-20 md:py-24 bg-slate-50 scroll-reveal">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+      <span class="text-brand text-xs font-bold uppercase tracking-[0.2em]">Cosa offriamo</span>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">I Nostri Servizi Sanitari</h2>
+      <p class="text-slate-500">Dalla prevenzione cardiaca alla cura dei piu piccoli, offriamo soluzioni concrete per la tua salute.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="service-card bg-white p-7 rounded-2xl border border-slate-200/60 card-hover cursor-default">
+        <div class="service-icon w-12 h-12 rounded-xl bg-emerald-50 text-brand flex items-center justify-center mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3 class="font-bold text-lg text-slate-900 mb-2">Elettrocardiogramma (ECG)</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Servizio di telemedicina per l'esecuzione rapida e refertata dell'ECG direttamente in sede, valido per lo sport e controlli generici.</p>
+      </div>
+
+      <div class="service-card bg-white p-7 rounded-2xl border border-slate-200/60 card-hover cursor-default">
+        <div class="service-icon w-12 h-12 rounded-xl bg-emerald-50 text-brand flex items-center justify-center mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3 class="font-bold text-lg text-slate-900 mb-2">Foratura Lobi</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Eseguita in condizioni di massima igiene e sicurezza con sistemi indolore e orecchini sterili e biocompatibili.</p>
+      </div>
+
+      <div class="service-card bg-white p-7 rounded-2xl border border-slate-200/60 card-hover cursor-default">
+        <div class="service-icon w-12 h-12 rounded-xl bg-emerald-50 text-brand flex items-center justify-center mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3 class="font-bold text-lg text-slate-900 mb-2">Pressione & Glicemia</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Controllo istantaneo dei parametri vitali, della pressione arteriosa e test rapidi per il controllo del profilo lipidico.</p>
+      </div>
+
+      <div class="service-card bg-white p-7 rounded-2xl border border-slate-200/60 card-hover cursor-default">
+        <div class="service-icon w-12 h-12 rounded-xl bg-emerald-50 text-brand flex items-center justify-center mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.31"/><path d="M14 2v7.31"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 11-4 0"/><path d="M5.52 16h12.96"/></svg>
+        </div>
+        <h3 class="font-bold text-lg text-slate-900 mb-2">Preparazioni Galeniche</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Formulazioni su misura preparate con cura e rigore scientifico nel nostro attrezzato laboratorio interno.</p>
+      </div>
+
+      <div class="service-card bg-white p-7 rounded-2xl border border-slate-200/60 card-hover cursor-default">
+        <div class="service-icon w-12 h-12 rounded-xl bg-emerald-50 text-brand flex items-center justify-center mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <h3 class="font-bold text-lg text-slate-900 mb-2">Prenotazioni CUP</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Servizio rapido di prenotazione per esami diagnostici e visite specialistiche del Servizio Sanitario Nazionale.</p>
+      </div>
+
+      <div class="service-card bg-white p-7 rounded-2xl border border-slate-200/60 card-hover cursor-default">
+        <div class="service-icon w-12 h-12 rounded-xl bg-emerald-50 text-brand flex items-center justify-center mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M18 21v-2a4 4 0 00-4-4H10a4 4 0 00-4 4v2"/></svg>
+        </div>
+        <h3 class="font-bold text-lg text-slate-900 mb-2">Infanzia e Cosmesi</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">Ampio assortimento di alimenti speciali, prodotti per neonati e mamme e marchi dermocosmetici d'avanguardia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="staff" class="py-20 md:py-24 bg-white scroll-reveal">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+      <span class="text-brand text-xs font-bold uppercase tracking-[0.2em]">Il nostro team</span>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Chi Siamo</h2>
+      <p class="text-slate-500">Un team unito e professionale al servizio della tua salute e del tuo benessere quotidiano.</p>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+      <div class="bg-slate-50 p-5 md:p-6 rounded-2xl border border-slate-100 text-center space-y-3 hover:shadow-lg hover:shadow-emerald-900/5 transition-all group">
+        <div class="w-16 h-16 md:w-20 md:h-20 bg-brand text-white font-extrabold text-xl md:text-2xl flex items-center justify-center rounded-full mx-auto group-hover:scale-105 transition-transform">RP</div>
+        <div>
+          <h4 class="font-bold text-slate-900 text-sm md:text-base">Dott.ssa Rosa Pagliarulo</h4>
+          <p class="text-[11px] text-brand font-bold tracking-wider uppercase mt-1">Farmacista Titolare</p>
+        </div>
+      </div>
+
+      <div class="bg-slate-50 p-5 md:p-6 rounded-2xl border border-slate-100 text-center space-y-3 hover:shadow-lg hover:shadow-emerald-900/5 transition-all group">
+        <div class="w-16 h-16 md:w-20 md:h-20 bg-slate-200 text-slate-700 font-bold text-xl md:text-2xl flex items-center justify-center rounded-full mx-auto group-hover:scale-105 transition-transform">FG</div>
+        <div>
+          <h4 class="font-bold text-slate-900 text-sm md:text-base">Francesco Gabrieli</h4>
+          <p class="text-[11px] text-slate-500 font-semibold tracking-wider uppercase mt-1">Farmacista</p>
+        </div>
+      </div>
+
+      <div class="bg-slate-50 p-5 md:p-6 rounded-2xl border border-slate-100 text-center space-y-3 hover:shadow-lg hover:shadow-emerald-900/5 transition-all group">
+        <div class="w-16 h-16 md:w-20 md:h-20 bg-slate-200 text-slate-700 font-bold text-xl md:text-2xl flex items-center justify-center rounded-full mx-auto group-hover:scale-105 transition-transform">RE</div>
+        <div>
+          <h4 class="font-bold text-slate-900 text-sm md:text-base">Rossella Epifani</h4>
+          <p class="text-[11px] text-slate-500 font-semibold tracking-wider uppercase mt-1">Farmacista</p>
+        </div>
+      </div>
+
+      <div class="bg-slate-50 p-5 md:p-6 rounded-2xl border border-slate-100 text-center space-y-3 hover:shadow-lg hover:shadow-emerald-900/5 transition-all group">
+        <div class="w-16 h-16 md:w-20 md:h-20 bg-slate-200 text-slate-700 font-bold text-xl md:text-2xl flex items-center justify-center rounded-full mx-auto group-hover:scale-105 transition-transform">AR</div>
+        <div>
+          <h4 class="font-bold text-slate-900 text-sm md:text-base">Alessandra Ricchello</h4>
+          <p class="text-[11px] text-slate-500 font-semibold tracking-wider uppercase mt-1">Farmacista</p>
+        </div>
+      </div>
+
+      <div class="bg-slate-50 p-5 md:p-6 rounded-2xl border border-slate-100 text-center space-y-3 hover:shadow-lg hover:shadow-emerald-900/5 transition-all group">
+        <div class="w-16 h-16 md:w-20 md:h-20 bg-emerald-100 text-emerald-800 font-bold text-xl md:text-2xl flex items-center justify-center rounded-full mx-auto group-hover:scale-105 transition-transform">TD</div>
+        <div>
+          <h4 class="font-bold text-slate-900 text-sm md:text-base">Tiziana Dimitri</h4>
+          <p class="text-[11px] text-brand font-bold tracking-wider uppercase mt-1">Collaboratrice</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 md:py-24 bg-slate-50 border-y border-slate-200/60 scroll-reveal">
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-slate-200/50 border border-slate-200 text-center space-y-6">
+            <div class="w-16 h-16 bg-emerald-50 text-brand rounded-2xl flex items-center justify-center mx-auto">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <div class="space-y-2">
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900">La tua opinione conta</h2>
+                <p class="text-slate-500 max-w-lg mx-auto">Hai avuto una buona esperienza presso la nostra farmacia? Lasciaci una recensione su Google, aiuta altri pazienti a trovarci e ci permette di migliorare ogni giorno.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <a href="https://g.page/r/CbVaDGGBbIkTEBM/review" target="_blank" rel="noopener" class="btn-primary px-8 py-3.5 rounded-xl font-bold shadow-lg flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Scrivi una recensione
+                </a>
+                <a href="https://www.google.com/search?q=farmacia+del+castello+corigliano+d%27otranto" target="_blank" rel="noopener" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-3.5 rounded-xl font-semibold shadow-sm transition-all text-center flex items-center justify-center gap-2">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    Vedi le recensioni
+                </a>
+            </div>
+            <p class="text-xs text-slate-400">La tua recensione verra pubblicata sulla pagina Google della farmacia. Grazie per il tuo feedback!</p>
+        </div>
+    </div>
+</section>
+
+<section id="orari" class="py-20 md:py-24 bg-white scroll-reveal">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+      <span class="text-brand text-xs font-bold uppercase tracking-[0.2em]">Quando trovarci</span>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Orari di Apertura</h2>
+      <p class="text-slate-500">Siamo a tua disposizione durante tutta la settimana con i seguenti orari.</p>
+    </div>
+
+    <div class="bg-white rounded-3xl shadow-xl shadow-slate-100 border border-slate-200 overflow-hidden">
+      <div class="divide-y divide-slate-100">
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-5 md:p-6 hover:bg-slate-50/50 transition-colors gap-2">
+          <span class="font-bold text-slate-800 flex items-center gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#005F30"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19a2 2 0 002 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+            Lunedi - Venerdi
+          </span>
+          <span class="text-slate-900 font-bold bg-emerald-50 text-emerald-800 px-4 py-1.5 rounded-xl text-sm self-start sm:self-auto">
+            08:30 - 13:00 &nbsp;|&nbsp; 17:00 - 20:30
+          </span>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-5 md:p-6 hover:bg-slate-50/50 transition-colors gap-2">
+          <span class="font-bold text-slate-800 flex items-center gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#005F30"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19a2 2 0 002 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+            Sabato Mattina
+          </span>
+          <span class="text-slate-900 font-bold bg-emerald-50 text-emerald-800 px-4 py-1.5 rounded-xl text-sm self-start sm:self-auto">
+            08:30 - 13:00
+          </span>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-5 md:p-6 hover:bg-slate-50/50 transition-colors gap-2">
+          <span class="font-bold text-slate-800 flex items-center gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#94a3b8"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19a2 2 0 002 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+            Sabato Pomeriggio
+          </span>
+          <span class="text-amber-800 font-bold bg-amber-50 border border-amber-100 px-4 py-1.5 rounded-xl text-sm self-start sm:self-auto">
+            Chiuso (salvo turno attivo)
+          </span>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center p-5 md:p-6 bg-red-50/30 hover:bg-red-50/40 transition-colors gap-2">
+          <span class="font-bold text-slate-800 flex items-center gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ef4444"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            Domenica
+          </span>
+          <span class="text-red-800 font-bold bg-red-50 border border-red-100 px-4 py-1.5 rounded-xl text-sm self-start sm:self-auto">
+            Chiuso (salvo turno attivo)
+          </span>
+        </div>
+      </div>
+
+      <div class="bg-emerald-50/70 p-5 md:p-6 text-center border-t border-emerald-100">
+        <p class="text-xs text-emerald-950 font-bold uppercase tracking-wider mb-2">Hai bisogno di controllare le farmacie di turno oggi?</p>
+        <a href="https://www.google.com/search?q=farmacie+di+turno+corigliano+d%27otranto" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-brand hover:text-brand-dark font-extrabold text-sm transition-colors">
+          Controlla i turni attivi nel territorio
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contatti" class="py-20 md:py-24 bg-slate-50 scroll-reveal">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 md:gap-14 items-stretch">
+
+    <div class="space-y-8 flex flex-col justify-between">
+      <div class="space-y-4">
+        <span class="text-brand text-xs font-bold uppercase tracking-[0.2em]">Resta in contatto</span>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Sede & Contatti</h2>
+        <p class="text-slate-500">Ti aspettiamo nella piazza principale del borgo. Puoi chiamarci o inviare un'email per qualsiasi richiesta d'informazioni o disponibilita dei farmaci.</p>
+      </div>
+
+      <div class="space-y-5">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 text-brand flex items-center justify-center shrink-0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#005F30"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-950 text-sm">La nostra posizione</h4>
+            <p class="text-slate-500 text-sm font-medium">Piazza Vittoria, 6, 73022 Corigliano d'Otranto (LE)</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 text-brand flex items-center justify-center shrink-0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#005F30"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-950 text-sm">Telefono Fisso</h4>
+            <a href="tel:+390836508740" class="hover:text-brand font-bold text-base transition-colors text-slate-700">0836 508740</a>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100/60 text-[#25D366] flex items-center justify-center shrink-0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-[#005F30] text-sm">WhatsApp (Ordini e Ricette)</h4>
+            <a href="https://wa.me/393500871133" target="_blank" rel="noopener" class="hover:text-[#20ba5a] font-bold text-base transition-colors text-[#25D366]">350 087 1133</a>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 text-brand flex items-center justify-center shrink-0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#005F30" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-950 text-sm">E-mail</h4>
+            <a href="mailto:farmaciadelcastellosnc@gmail.com" class="hover:text-brand font-semibold text-sm transition-colors text-slate-700 break-all">farmaciadelcastellosnc@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-slate-100 flex gap-4">
+        <a href="https://wa.me/393500871133" target="_blank" rel="noopener" class="flex-1 btn-whatsapp text-center py-4 rounded-xl font-bold transition-all shadow-lg flex items-center justify-center gap-1.5">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Scrivi
+        </a>
+        <a href="https://maps.google.com/?q=Piazza+Vittoria+6+Corigliano+d'Otranto" target="_blank" rel="noopener" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-800 text-center py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-1.5">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Naviga
+        </a>
+      </div>
+    </div>
+
+    <div class="relative w-full h-[380px] md:h-[500px] rounded-3xl overflow-hidden border border-slate-200 shadow-xl">
+            <iframe 
+                class="absolute inset-0 w-full h-full border-0"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3032.5516084882116!2d18.25418187656641!3d40.16010077148154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134423455a04ddfb%3A0xe76426ffc70ca6b!2sPiazza%20Vittoria%2C%206%2C%2073022%20Corigliano%20d&#39;Otranto%20LE!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mappa Farmacia del Castello - Corigliano d'Otranto">
+            </iframe>
+        </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="mt-auto bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+  <div class="max-w-6xl mx-auto px-4 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+    <div class="space-y-2">
+      <p class="font-bold text-white text-lg">Farmacia del Castello s.n.c.</p>
+      <p class="text-xs max-w-sm">Piazza Vittoria, 6 - 73022 Corigliano d'Otranto (LE) | Partita IVA: 04864130754</p>
+    </div>
+    <p class="text-xs">&copy; 2026 Farmacia del Castello. Tutti i diritti riservati.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+  const closeIcon = document.getElementById('closeIcon');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    });
+  });
+
+  // Scroll reveal animation
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.scroll-reveal').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
